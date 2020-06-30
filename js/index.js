@@ -40,3 +40,60 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+const navMain = document.querySelectorAll(`nav a`);
+
+let i = 1;
+
+navMain.forEach((item) => {
+  item.textContent = siteContent[`nav`][`nav-item-${i}`];
+  i = i + 1;
+});
+
+const headline = document.querySelector(`.cta-text h1`);
+// const headlineSplit = siteContent[`cta`][`h1`].split(` `);
+// const br = document.createElement(`br`);
+// console.log(headlineSplit);
+// const headlineNew = headlineSplit[0] + br + headlineSplit[1];
+// console.log(headlineNew);
+headline.textContent = siteContent[`cta`][`h1`];
+// headline.style.width = `40%`;
+
+const ctaImg = document.querySelector(`#cta-img`);
+ctaImg.src = siteContent[`cta`][`img-src`];
+
+const ctaButton = document.querySelector(`.cta-text button`);
+ctaButton.textContent = siteContent[`cta`][`button`];
+
+const topHeadlines = document.querySelectorAll(`.top-content h4`);
+topHeadlines[0].textContent = siteContent[`main-content`][`features-h4`];
+topHeadlines[1].textContent = siteContent[`main-content`][`about-h4`];
+
+const topContentDesc = document.querySelectorAll(`.top-content p`);
+topContentDesc[0].textContent = siteContent[`main-content`][`features-content`];
+topContentDesc[1].textContent = siteContent[`main-content`][`about-content`];
+
+const middleImg = document.querySelector(`.main-content img`);
+middleImg.src = siteContent[`main-content`][`middle-img-src`];
+
+const bottomHeadlines = document.querySelectorAll(`.bottom-content h4`);
+bottomHeadlines[0].textContent = siteContent[`main-content`][`services-h4`];
+bottomHeadlines[1].textContent = siteContent[`main-content`][`product-h4`];
+bottomHeadlines[2].textContent = siteContent[`main-content`][`vision-h4`];
+
+
+const bottomContentDesc = document.querySelectorAll(`.bottom-content p`);
+bottomContentDesc[0].textContent = siteContent[`main-content`][`services-content`];
+bottomContentDesc[1].textContent = siteContent[`main-content`][`product-content`];
+bottomContentDesc[2].textContent = siteContent[`main-content`][`vision-content`];
+
+const contactHeadline = document.querySelector(`.contact h4`);
+contactHeadline.textContent = siteContent[`contact`][`contact-h4`];
+
+const contactAddress = document.querySelectorAll(`.contact p`);
+contactAddress[0].textContent = siteContent[`contact`][`address`];
+contactAddress[1].textContent = siteContent[`contact`][`phone`];
+contactAddress[2].textContent = siteContent[`contact`][`email`];
+
+const footer = document.querySelector(`footer p`);
+footer.textContent = siteContent[`footer`][`copyright`];
