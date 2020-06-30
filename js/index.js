@@ -48,7 +48,16 @@ let i = 1;
 navMain.forEach((item) => {
   item.textContent = siteContent[`nav`][`nav-item-${i}`];
   i = i + 1;
+  item.style.color = `green`;
 });
+
+const navNewOne = document.createElement(`a`);
+navNewOne.textContent = `Home`;
+const navNewTwo = document.createElement(`a`);
+navNewTwo.textContent = `Secret`;
+const navBeginning = document.querySelector(`nav`);
+navBeginning.prepend(navNewOne);
+navBeginning.appendChild(navNewTwo);
 
 const headline = document.querySelector(`.cta-text h1`);
 // const headlineSplit = siteContent[`cta`][`h1`].split(` `);
@@ -73,7 +82,7 @@ const topContentDesc = document.querySelectorAll(`.top-content p`);
 topContentDesc[0].textContent = siteContent[`main-content`][`features-content`];
 topContentDesc[1].textContent = siteContent[`main-content`][`about-content`];
 
-const middleImg = document.querySelector(`.main-content img`);
+const middleImg = document.querySelector(`#middle-img`);
 middleImg.src = siteContent[`main-content`][`middle-img-src`];
 
 const bottomHeadlines = document.querySelectorAll(`.bottom-content h4`);
