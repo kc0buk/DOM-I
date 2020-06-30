@@ -41,7 +41,7 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-const navMain = document.querySelectorAll(`nav a`);
+let navMain = document.querySelectorAll(`nav a`);
 
 let i = 1;
 
@@ -58,6 +58,12 @@ navNewTwo.textContent = `Secret`;
 const navBeginning = document.querySelector(`nav`);
 navBeginning.prepend(navNewOne);
 navBeginning.appendChild(navNewTwo);
+
+const newNav = document.querySelectorAll(`nav a`);
+// console.log(newNav);
+newNav.forEach((item) => item.style.textTransform = `uppercase`);
+
+// newNav.style.textTransform = 'capatilize';
 
 const headline = document.querySelector(`.cta-text h1`);
 // const headlineSplit = siteContent[`cta`][`h1`].split(` `);
@@ -106,3 +112,36 @@ contactAddress[2].textContent = siteContent[`contact`][`email`];
 
 const footer = document.querySelector(`footer p`);
 footer.textContent = siteContent[`footer`][`copyright`];
+
+const subHeadlines = document.querySelectorAll(`h4`);
+// console.log(subHeadlines);
+subHeadlines.forEach((item) => item.style.color = `dodgerblue`);
+
+
+
+const btn = document.querySelector(`.cta-text button`);
+// console.log(btn);
+const h1 = document.querySelector(`h1`);
+h1.classList.add(`color`);
+
+btn.addEventListener(`click`, function() {
+  const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+  let hexColor = `#`;
+  let randomNumber = (() => Math.floor(Math.random() * hex.length));
+  for (let i = 0; i < 6; i++) {
+    hexColor += hex[randomNumber()];
+  }
+  btn.style.backgroundColor = `${hexColor}`;
+  h1.style.color = `${hexColor}`;
+  console.log(hexColor);
+})
+
+// btn.addEventListener('click', function() {
+//   let hexColor = '#'
+//       for (let i = 0; i < 6; i++) {
+//           hexColor += hex[getRandomNumber(0,hex.length-1)];
+//           // console.log(getRandomNumber());
+//       }
+//       color.textContent = hexColor;
+//       document.body.style.backgroundColor = hexColor;
+// })
